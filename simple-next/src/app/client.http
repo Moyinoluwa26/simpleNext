@@ -1,8 +1,14 @@
-POST http://localhost:3000/api/users/login
+POST http://localhost:3000/api/blogs/addBlog
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDIzYzExZWFlYzAxZDUzOWI0YzI3MyIsImlhdCI6MTcyNTA1NDAwMiwiZXhwIjoxNzI1NjU4ODAyfQ.EmQSIb61VCTPnsoOGpgudGSJxYd6apMOqmGqsw2vUp4
 
 {
 
-    "password": "test",
-    "email": "victormoyin48345@gmail.com"
-}
+    "title": "My first blog",
+    "content": "This is my first blog content"
+    
+
+}   
+
+
+
