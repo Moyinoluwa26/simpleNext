@@ -24,7 +24,7 @@ function Login() {
                 const data = await res.json();
                 localStorage.setItem('token', data.token);
                 console.log(data);
-                router.push('/');
+                router.push('/hommo');
 
 
             } else if (res.status === 400) {
@@ -40,29 +40,32 @@ function Login() {
         }
     }
     return (
-        <div>
-            <div>
-                <h1>Login</h1>
-                <form onSubmit={handleSubmit}>
+        <div className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-r from-purple-500 to-blue-500">
+            <div className='h-96 bg-white  flex flex-col my-auto rounded-2xl w-96 justify-between '>
+
+                <form onSubmit={handleSubmit} className='flex flex-col px-5 mt-9 text-mb '>
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
+                        placeholder="  Email"
                         required
+                        className='mb-5 h-9'
                     />
                     <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
+                        placeholder="  Password"
                         required
+                        className='mb-5 mt-5 h-9'
                     />
-                    <button type="submit" >Login</button>
+                    <button type="submit" className='h-9 w-24  rounded-xl bg-gradient-to-l from-gray-500 to-blue-500'>Login</button>
                 </form>
-                {error && <p>{error}</p>}
+                {error && <p className='h-12 text-xl text-red-500 ml-5'>{error}</p>}
+                <button onClick={() => router.push('/login/register')} className='ml-5 mb-9 bg-gradient-to-l from-blue-500 to-gray-500 h-9 w-72 rounded-xl  '>Dont have an Acct ? :: Register</button>
             </div>
-            <button onClick={() => router.push('/login/register')}>Dont have an Acct ? :: Register</button>
+
         </div>
     );
 }

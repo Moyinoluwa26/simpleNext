@@ -1,6 +1,6 @@
 import dbConnect from "@/app/lib/database";
 import Blog from "@/app/models/Blog";
-import authMiddlewareJs from "@/app/lib";
+import { getUserFromToken } from "@/app/lib/authMiddleware.js";
 
 
 export async function POST(req) {
@@ -12,7 +12,7 @@ export async function POST(req) {
 
 
         const { title, content } = await req.json();
-        const user = await authMiddlewareJs(req, res, next);
+        const user = await getUserFromToken(req);
 
         const blog = new Blog({ title, content, user: user.id });
         await blog.save();

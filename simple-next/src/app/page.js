@@ -16,10 +16,10 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className='flex flex-col'>
+    <main className="flex min-h-screen flex-col items-center justify-between bg-gradient-to-r from-purple-500 to-blue-500">
+      <div className='flex flex-row justify-between mt-5 px-5 w-full text-white text-xl '>
         HomePage
-        <Link href="/login" className='mt-5'>Login Here</Link>
+        <Link href="/login" className='mr-5' >Login Here</Link>
       </div>
     </main>
   );

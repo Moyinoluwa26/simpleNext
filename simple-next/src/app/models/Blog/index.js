@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import build from 'next/dist/build';
 import User from '../User';
 
 const blogSchema = new mongoose.Schema({
